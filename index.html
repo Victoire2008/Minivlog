@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon Parcours & Motivation IA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    .fade-in { opacity:0; transform:translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+    .fade-in.show { opacity:1; transform:translateY(0); }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+  <!-- Header / Hero -->
+  <header class="bg-gradient-to-r from-indigo-800 via-black-300 to-blue-200 text-black py-24">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h1 class="text-5xl font-bold mb-4">Victoire Emmanuelle BAMBA</h1>
+      <p class="text-xl md:text-2xl text-yellow-100">
+        Développeuse passionnée par l’Intelligence Artificielle et l’analyse de données
+      </p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-4xl mx-auto px-4 py-16 space-y-24">
+
+    <!-- Parcours -->
+    <section class="fade-in flex flex-col md:flex-row items-center gap-6 bg-gray-50 p-6 rounded-lg shadow-lg">
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+           alt="Parcours" class="rounded-lg w-full md:w-1/2 shadow-lg">
+      <div>
+        <h2 class="text-3xl font-semibold text-yellow-500 mb-4 flex items-center">
+          <i class="fa-solid fa-user mr-3"></i>Mon Parcours
+        </h2>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex items-start">
+            <i class="fa-solid fa-check text-yellow-500 mt-1 mr-3"></i>
+           <B>Formation en  Informatique Développeur d’Applications (IDA)
+             et admissible au BTS filière IDA.</B>
+          </li>
+          <li class="flex items-start">
+            <i class="fa-solid fa-check text-yellow-500 mt-1 mr-3"></i>
+            Stage actuel dans une SAS, acquisition de compétences en programmation, frameworks, travail en équipe et analyse des besoins utilisateurs.
+          </li>
+          <li class="flex items-start">
+            <i class="fa-solid fa-check text-yellow-500 mt-1 mr-3"></i>
+            Découverte de l’IA depuis la première année du BTS à travers projets de design, copyrighting et retouches photos.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Motivation -->
+    <section class="fade-in flex flex-col md:flex-row-reverse items-center gap-6 bg-gray-50 p-6 rounded-lg shadow-lg">
+      <img src="https://storage.letudiant.fr/mediatheque/letudiant/8/4/2772384-comment-faire-lettre-motivation-intelligence-artificielle-letudiant-632x421.webp" 
+           alt="Motivation" class="rounded-lg w-full md:w-1/2 shadow-lg">
+      <div>
+        <h2 class="text-3xl font-semibold text-yellow-500 mb-4 flex items-center">
+          <i class="fa-solid fa-bolt mr-3"></i>Ma Motivation
+        </h2>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex items-start">
+            <i class="fa-solid fa-check text-yellow-500 mt-1 mr-3"></i>
+            Approfondir mes connaissances en <strong>IA et analyse de données</strong>.
+          </li>
+          <li class="flex items-start">
+            <i class="fa-solid fa-check text-yellow-500 mt-1 mr-3"></i>
+            Apporter un réel impact à ma société et contribuer au développement de l’IA en Afrique.
+          </li>
+          <li class="flex items-start">
+            <i class="fa-solid fa-check text-yellow-500 mt-1 mr-3"></i>
+            Apprendre à analyser les données, créer des solutions intelligentes et m’intégrer pleinement dans le monde professionnel.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Vision -->
+    <section class="fade-in flex flex-col md:flex-row items-center gap-6 bg-gray-50 p-6 rounded-lg shadow-lg">
+      <img src="https://www.zdnet.fr/wp-content/uploads/zdnet/2025/10/carriere-proteger-faire-evoluer-son-boulot-750x410.webp" 
+           alt="Vision" class="rounded-lg w-full md:w-1/2 shadow-lg">
+      <div>
+        <h2 class="text-3xl font-semibold text-yellow-500 mb-4 flex items-center">
+          <i class="fa-solid fa-eye mr-3"></i>Ma Vision
+        </h2>
+        <p class="text-gray-700 leading-relaxed">
+          Intégrer cette formation représente une étape décisive pour transformer ma passion pour l’IA en compétences concrètes et utiles.  
+          Mon objectif est de construire une carrière tournée vers l’innovation, l’impact et la valeur réelle pour les entreprises et la société.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gradient-to-r from-indigo-800 via-black-300 to-blue-200 text-black py-10">
+    <div class="max-w-4xl mx-auto px-4 text-center text-sm">
+      © 2026 Victoire Emmanuelle – Formation Data & IA
+    </div>
+  </footer>
+
+  <!-- Script fade-in au scroll -->
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if(!entry.isIntersecting) return;
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => appearOnScroll.observe(fader));
+  </script>
+
+</body>
+</html>
